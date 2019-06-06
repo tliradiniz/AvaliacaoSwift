@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		533FF63D22A9D16300E239BA /* LocaisTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533FF63C22A9D16300E239BA /* LocaisTableViewController.swift */; };
+		533FF64122A9D3A500E239BA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533FF64022A9D3A500E239BA /* Location.swift */; };
+		5366215B22A7336A001F4F35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5366215A22A7336A001F4F35 /* GoogleService-Info.plist */; };
 		717BD03F228E1F2B00A94AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717BD03E228E1F2B00A94AF0 /* AppDelegate.swift */; };
 		717BD041228E1F2B00A94AF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717BD040228E1F2B00A94AF0 /* ViewController.swift */; };
 		717BD044228E1F2B00A94AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717BD042228E1F2B00A94AF0 /* Main.storyboard */; };
 		717BD046228E1F2D00A94AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717BD045228E1F2D00A94AF0 /* Assets.xcassets */; };
 		717BD049228E1F2D00A94AF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717BD047228E1F2D00A94AF0 /* LaunchScreen.storyboard */; };
+		B093FA3F0D8D8AA9D9946082 /* Pods_HelloFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E4D99FCA6990D93A115820 /* Pods_HelloFirebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32E4D99FCA6990D93A115820 /* Pods_HelloFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44B347CAA011D80E61E84D41 /* Pods-HelloFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFirebase/Pods-HelloFirebase.release.xcconfig"; sourceTree = "<group>"; };
+		533FF63C22A9D16300E239BA /* LocaisTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaisTableViewController.swift; sourceTree = "<group>"; };
+		533FF64022A9D3A500E239BA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		5366215A22A7336A001F4F35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		717BD03B228E1F2B00A94AF0 /* HelloFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		717BD03E228E1F2B00A94AF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		717BD040228E1F2B00A94AF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,7 @@
 		717BD045228E1F2D00A94AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		717BD048228E1F2D00A94AF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		717BD04A228E1F2D00A94AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADBBBCCBFC0E5CE492F6FEA0 /* Pods-HelloFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFirebase/Pods-HelloFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B093FA3F0D8D8AA9D9946082 /* Pods_HelloFirebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4288C4CE992534557D9D1F9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADBBBCCBFC0E5CE492F6FEA0 /* Pods-HelloFirebase.debug.xcconfig */,
+				44B347CAA011D80E61E84D41 /* Pods-HelloFirebase.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		717BD032228E1F2B00A94AF0 = {
 			isa = PBXGroup;
 			children = (
 				717BD03D228E1F2B00A94AF0 /* HelloFirebase */,
 				717BD03C228E1F2B00A94AF0 /* Products */,
+				4288C4CE992534557D9D1F9E /* Pods */,
+				7F52FA31E8DD9303121EADE7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +78,23 @@
 			children = (
 				717BD03E228E1F2B00A94AF0 /* AppDelegate.swift */,
 				717BD040228E1F2B00A94AF0 /* ViewController.swift */,
+				533FF63C22A9D16300E239BA /* LocaisTableViewController.swift */,
 				717BD042228E1F2B00A94AF0 /* Main.storyboard */,
 				717BD045228E1F2D00A94AF0 /* Assets.xcassets */,
 				717BD047228E1F2D00A94AF0 /* LaunchScreen.storyboard */,
 				717BD04A228E1F2D00A94AF0 /* Info.plist */,
+				5366215A22A7336A001F4F35 /* GoogleService-Info.plist */,
+				533FF64022A9D3A500E239BA /* Location.swift */,
 			);
 			path = HelloFirebase;
+			sourceTree = "<group>";
+		};
+		7F52FA31E8DD9303121EADE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32E4D99FCA6990D93A115820 /* Pods_HelloFirebase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 717BD04D228E1F2D00A94AF0 /* Build configuration list for PBXNativeTarget "HelloFirebase" */;
 			buildPhases = (
+				B6C5374CBE85155AF9643207 /* [CP] Check Pods Manifest.lock */,
 				717BD037228E1F2B00A94AF0 /* Sources */,
 				717BD038228E1F2B00A94AF0 /* Frameworks */,
 				717BD039228E1F2B00A94AF0 /* Resources */,
+				309F3854AB37EA23957C1A50 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				717BD049228E1F2D00A94AF0 /* LaunchScreen.storyboard in Resources */,
+				5366215B22A7336A001F4F35 /* GoogleService-Info.plist in Resources */,
 				717BD046228E1F2D00A94AF0 /* Assets.xcassets in Resources */,
 				717BD044228E1F2B00A94AF0 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +166,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		309F3854AB37EA23957C1A50 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HelloFirebase/Pods-HelloFirebase-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloFirebase/Pods-HelloFirebase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6C5374CBE85155AF9643207 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelloFirebase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		717BD037228E1F2B00A94AF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				717BD041228E1F2B00A94AF0 /* ViewController.swift in Sources */,
+				533FF64122A9D3A500E239BA /* Location.swift in Sources */,
 				717BD03F228E1F2B00A94AF0 /* AppDelegate.swift in Sources */,
+				533FF63D22A9D16300E239BA /* LocaisTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,34 +363,38 @@
 		};
 		717BD04E228E1F2D00A94AF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADBBBCCBFC0E5CE492F6FEA0 /* Pods-HelloFirebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HelloFirebase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.valente.HelloFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		717BD04F228E1F2D00A94AF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44B347CAA011D80E61E84D41 /* Pods-HelloFirebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HelloFirebase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.valente.HelloFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
