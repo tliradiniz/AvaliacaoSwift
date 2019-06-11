@@ -167,21 +167,28 @@
                                 <action selector="LogOutButton:" destination="Er1-5O-nKA" id="HMl-ID-x89"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4OS-ua-MCe">
-                            <connections>
-                                <segue destination="PS0-sH-WEK" kind="show" id="fp0-NA-TDa"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="4OS-ua-MCe">
+                                <connections>
+                                    <segue destination="PS0-sH-WEK" kind="show" id="fp0-NA-TDa"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Mapa" id="wvP-S2-vWq">
+                                <connections>
+                                    <segue destination="mnP-uV-q3o" kind="show" id="pan-Ar-IfW"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RR-mO-zTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2471" y="269"/>
         </scene>
-        <!--View Controller-->
+        <!--Local-->
         <scene sceneID="Gcp-tK-FT2">
             <objects>
-                <viewController id="PS0-sH-WEK" sceneMemberID="viewController">
+                <viewController id="PS0-sH-WEK" customClass="LocalViewController" customModule="HelloFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lRN-Vg-TDX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,6 +231,10 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="req-4G-mwE">
                                 <rect key="frame" x="117" y="303" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Count:" destination="uVX-z9-1bL" eventType="valueChanged" id="LuW-FE-UMT"/>
+                                    <action selector="Count:" destination="PS0-sH-WEK" eventType="valueChanged" id="q3W-pm-1ZH"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvj-SF-VEe">
                                 <rect key="frame" x="46" y="307" width="42" height="21"/>
@@ -236,10 +247,52 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Jn8-e1-70X"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Local" id="C6i-iF-jDY">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="orI-lJ-7Z1">
+                            <connections>
+                                <action selector="salvar:" destination="PS0-sH-WEK" id="ZP1-ui-k4Q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="Label" destination="dvj-SF-VEe" id="NYN-NX-ZfG"/>
+                        <outlet property="grupoNome" destination="9aS-6J-qgA" id="b3e-xX-Vd6"/>
+                        <outlet property="localNome" destination="7cQ-qT-3t0" id="dQG-AP-Loq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4w-Ac-6dw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uVX-z9-1bL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3236" y="268.51574212893553"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="fTv-53-NiO">
+            <objects>
+                <viewController id="mnP-uV-q3o" customClass="MapViewController" customModule="HelloFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Icc-B9-rWV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AZ9-1J-7Rf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aAs-0K-hQi" firstAttribute="bottom" secondItem="AZ9-1J-7Rf" secondAttribute="bottom" id="3st-YV-DgS"/>
+                            <constraint firstItem="AZ9-1J-7Rf" firstAttribute="top" secondItem="aAs-0K-hQi" secondAttribute="top" id="EVw-Mf-F3q"/>
+                            <constraint firstItem="aAs-0K-hQi" firstAttribute="trailing" secondItem="AZ9-1J-7Rf" secondAttribute="trailing" id="NqN-w0-yvo"/>
+                            <constraint firstItem="AZ9-1J-7Rf" firstAttribute="leading" secondItem="aAs-0K-hQi" secondAttribute="leading" id="fHf-5e-XvQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aAs-0K-hQi"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="AZ9-1J-7Rf" id="Pr0-JT-2vX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fGA-11-CXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2470" y="1133"/>
         </scene>
     </scenes>
 </document>

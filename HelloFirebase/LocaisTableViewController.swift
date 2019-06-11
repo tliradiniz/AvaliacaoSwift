@@ -12,16 +12,58 @@ import Firebase
 class LocaisTableViewController: UITableViewController {
 
     
-    
+    var locations = [Location]()
+    var ref: DatabaseReference! = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Locais"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.ref.child("locations").observe(.childAdded, with: { (snapshot) in
+            let value = snapshot.value as! [String: Any]
+            
+            let newLocation = Location(location: value["location"] as! String, members: value["members"] as! Int, isFull: value["isFull"] as! Bool, ref: snapshot.ref)
+            
+            self.locations.append(newLocation)
+            
+            let indexPath = IndexPath(row: self.locations.count - 1, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .fade)
+        })
+        //Remover
+        //Item removido
+//        self.ref.child("items").observe(.childRemoved, with: { (snapshot) in
+//            let key = snapshot.key
+//            
+//            for (index, item) in self.items.enumerated() {
+//                if item.ref!.key == key {
+//                    self.items.remove(at: index)
+//                    let indexPath = IndexPath(row: index, section: 0)
+//                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+//                    break;
+//                }
+//            }
+//        })
+//        
+//        //Alterar
+//        //Item alterado
+//        self.ref.child("items").observe(.childChanged, with: { (snapshot) in
+//            let key = snapshot.key
+//            let updatedValue = snapshot.value as! [String:Any]
+//            
+//            for (index, item) in self.items.enumerated() {
+//                if item.ref!.key == key {
+//                    self.items[index].completed = updatedValue["completed"] as! Bool
+//                    break;
+//                }
+//            }
+//            
+//            self.tableView.reloadData()
+//        })
+//        // Do any additional setup after loading the view.
+//        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+//        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -33,7 +75,7 @@ class LocaisTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.locations.count
     }
     
     @IBAction func LogOutButton(_ sender: UIBarButtonItem) {

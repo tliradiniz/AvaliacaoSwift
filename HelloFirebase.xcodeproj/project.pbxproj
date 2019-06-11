@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		533FF63D22A9D16300E239BA /* LocaisTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533FF63C22A9D16300E239BA /* LocaisTableViewController.swift */; };
 		533FF64122A9D3A500E239BA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533FF64022A9D3A500E239BA /* Location.swift */; };
-		5366215B22A7336A001F4F35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5366215A22A7336A001F4F35 /* GoogleService-Info.plist */; };
+		53D261F522AB1F2400E9CC44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53D261F422AB1F2300E9CC44 /* GoogleService-Info.plist */; };
+		53D261F722AB223800E9CC44 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D261F622AB223800E9CC44 /* MapViewController.swift */; };
+		53D261F922AB233D00E9CC44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D261F822AB233C00E9CC44 /* MapKit.framework */; };
+		53D261FB22AB2A2100E9CC44 /* LocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D261FA22AB2A2100E9CC44 /* LocalViewController.swift */; };
 		717BD03F228E1F2B00A94AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717BD03E228E1F2B00A94AF0 /* AppDelegate.swift */; };
 		717BD041228E1F2B00A94AF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717BD040228E1F2B00A94AF0 /* ViewController.swift */; };
 		717BD044228E1F2B00A94AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717BD042228E1F2B00A94AF0 /* Main.storyboard */; };
@@ -23,7 +26,10 @@
 		44B347CAA011D80E61E84D41 /* Pods-HelloFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFirebase/Pods-HelloFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		533FF63C22A9D16300E239BA /* LocaisTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaisTableViewController.swift; sourceTree = "<group>"; };
 		533FF64022A9D3A500E239BA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		5366215A22A7336A001F4F35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53D261F422AB1F2300E9CC44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53D261F622AB223800E9CC44 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		53D261F822AB233C00E9CC44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		53D261FA22AB2A2100E9CC44 /* LocalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewController.swift; sourceTree = "<group>"; };
 		717BD03B228E1F2B00A94AF0 /* HelloFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		717BD03E228E1F2B00A94AF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		717BD040228E1F2B00A94AF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D261F922AB233D00E9CC44 /* MapKit.framework in Frameworks */,
 				B093FA3F0D8D8AA9D9946082 /* Pods_HelloFirebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,12 +86,14 @@
 				717BD03E228E1F2B00A94AF0 /* AppDelegate.swift */,
 				717BD040228E1F2B00A94AF0 /* ViewController.swift */,
 				533FF63C22A9D16300E239BA /* LocaisTableViewController.swift */,
+				53D261F622AB223800E9CC44 /* MapViewController.swift */,
 				717BD042228E1F2B00A94AF0 /* Main.storyboard */,
 				717BD045228E1F2D00A94AF0 /* Assets.xcassets */,
 				717BD047228E1F2D00A94AF0 /* LaunchScreen.storyboard */,
 				717BD04A228E1F2D00A94AF0 /* Info.plist */,
-				5366215A22A7336A001F4F35 /* GoogleService-Info.plist */,
+				53D261F422AB1F2300E9CC44 /* GoogleService-Info.plist */,
 				533FF64022A9D3A500E239BA /* Location.swift */,
+				53D261FA22AB2A2100E9CC44 /* LocalViewController.swift */,
 			);
 			path = HelloFirebase;
 			sourceTree = "<group>";
@@ -92,6 +101,7 @@
 		7F52FA31E8DD9303121EADE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53D261F822AB233C00E9CC44 /* MapKit.framework */,
 				32E4D99FCA6990D93A115820 /* Pods_HelloFirebase.framework */,
 			);
 			name = Frameworks;
@@ -158,7 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				717BD049228E1F2D00A94AF0 /* LaunchScreen.storyboard in Resources */,
-				5366215B22A7336A001F4F35 /* GoogleService-Info.plist in Resources */,
+				53D261F522AB1F2400E9CC44 /* GoogleService-Info.plist in Resources */,
 				717BD046228E1F2D00A94AF0 /* Assets.xcassets in Resources */,
 				717BD044228E1F2B00A94AF0 /* Main.storyboard in Resources */,
 			);
@@ -216,9 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D261FB22AB2A2100E9CC44 /* LocalViewController.swift in Sources */,
 				717BD041228E1F2B00A94AF0 /* ViewController.swift in Sources */,
 				533FF64122A9D3A500E239BA /* Location.swift in Sources */,
 				717BD03F228E1F2B00A94AF0 /* AppDelegate.swift in Sources */,
+				53D261F722AB223800E9CC44 /* MapViewController.swift in Sources */,
 				533FF63D22A9D16300E239BA /* LocaisTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

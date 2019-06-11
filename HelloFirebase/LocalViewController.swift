@@ -7,13 +7,33 @@
 //
 
 import UIKit
+import Firebase
 
 class LocalViewController: UIViewController {
 
+    var count = 0
+    var ref: DatabaseReference! = Database.database().reference()
+    @IBOutlet weak var grupoNome: UITextField!
+    
+    @IBOutlet weak var localNome: UITextField!
+    
+    @IBOutlet weak var label: UILabel!
+    
+    @IBAction func Count(_ sender: UIStepper) {
+        label.text = Int(sender.value).description
+        //UIStepper.set
+    }
+    @IBAction func salvar(_ sender: Any) {
+       
+        let newLocation = Location(location: localNome!.text!, members: Int(label!.text!)!, isFull: false, ref: nil)
+        self.ref.child("locations").childByAutoId().setValue(newLocation.toAnyObject())
+    }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        label.text = String(count)
+        
+        
     }
     
 
