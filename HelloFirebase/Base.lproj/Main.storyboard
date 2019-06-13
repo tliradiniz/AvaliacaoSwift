@@ -170,7 +170,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="4OS-ua-MCe">
                                 <connections>
-                                    <segue destination="PS0-sH-WEK" kind="show" id="fp0-NA-TDa"/>
+                                    <segue destination="PS0-sH-WEK" kind="show" identifier="Update" id="fp0-NA-TDa"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Mapa" id="wvP-S2-vWq">

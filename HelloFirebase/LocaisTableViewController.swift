@@ -31,39 +31,23 @@ class LocaisTableViewController: UITableViewController {
             let indexPath = IndexPath(row: self.locations.count - 1, section: 0)
             self.tableView.insertRows(at: [indexPath], with: .fade)
         })
-        //Remover
-        //Item removido
-//        self.ref.child("items").observe(.childRemoved, with: { (snapshot) in
-//            let key = snapshot.key
-//            
-//            for (index, item) in self.items.enumerated() {
-//                if item.ref!.key == key {
-//                    self.items.remove(at: index)
-//                    let indexPath = IndexPath(row: index, section: 0)
-//                    self.tableView.deleteRows(at: [indexPath], with: .fade)
-//                    break;
-//                }
-//            }
-//        })
-//        
-//        //Alterar
-//        //Item alterado
-//        self.ref.child("items").observe(.childChanged, with: { (snapshot) in
-//            let key = snapshot.key
-//            let updatedValue = snapshot.value as! [String:Any]
-//            
-//            for (index, item) in self.items.enumerated() {
-//                if item.ref!.key == key {
-//                    self.items[index].completed = updatedValue["completed"] as! Bool
-//                    break;
-//                }
-//            }
-//            
-//            self.tableView.reloadData()
-//        })
-//        // Do any additional setup after loading the view.
-//        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.ref.child("locations").observe(.childRemoved, with: { (snapshot) in
+            let key = snapshot.key
+            
+            for (index, location) in self.locations.enumerated() {
+                if location.ref!.key == key {
+                    self.locations.remove(at: index)
+                    let indexPath = IndexPath(row: index, section: 0)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    break;
+                }
+            }
+        })
+        
+    
+
+        
     }
 
     // MARK: - Table view data source
@@ -87,7 +71,16 @@ class LocaisTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+        let location = self.locations[indexPath.row]
+        
+        cell.textLabel?.text = location.location
+        cell.detailTextLabel?.text = "Disponibilidade :"
+        
+        if (location.isFull) {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
 
         return cell
     }
@@ -101,17 +94,24 @@ class LocaisTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) -> Void {
+        let local = self.locations[indexPath.row]
+        let newFull = local.isFull
+        let newMember = local.members
+        let newLocation = local.location
+        local.ref?.updateChildValues(["isFull":newFull, "members":newMember ,"location":newLocation])
     }
-    */
+    
+  
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let location = self.locations[indexPath.row]
+            location.ref?.removeValue()
+        }
+    }
+ 
 
     /*
     // Override to support rearranging the table view.
@@ -128,14 +128,22 @@ class LocaisTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   
+//PARAMOS AQUI
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "Update" {
+            if let novaView = segue.destination as? LocalViewController{
+                let localPos = tableView.indexPathForSelectedRow?.row
+                self.local = self.locations[localPos!]
+                let newFull = local.isFull
+                let newMember = local.members
+                let newLocation = local.location
+                local.ref?.updateChildValues(["isFull":newFull, "members":newMember ,"location":newLocation])
+            }
+        }
     }
-    */
+
+
 
 }
